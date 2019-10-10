@@ -1,0 +1,49 @@
+%% This is the main file and you use this file to organize your assignment.
+
+\documentclass[a4paper]{article}	  
+\usepackage[margin=3cm]{geometry} 	   % Choose your margin here. 
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{todonotes}
+
+\newcommand{\figref}[1]{\figurename~\ref{#1}}
+
+\let\endtitlepage\relax						% Begin the text immidiately after the title page. Optional
+\setlength{\parindent}{0cm}				% Start paragraph without indent. Optional
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+\Large TTK4190 Guidance and Control of Vehicles \\
+\vspace{10pt}
+\Large  Assignment 2 - Part II\\
+\vspace{10pt}
+\large Written Fall 2018 By \\
+\large Anders Haver Vagle,\\ Ada Skarsholt Larsen,\\ Sondre Aleksander Bergum,\\ Martin Madsen
+
+\vspace{2.0cm}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{figures/flying-kalman.png}
+\end{figure}
+
+\begin{figure}[b]
+\centering
+\includegraphics[width=0.5\textwidth]{figures/itk_ntnu}\\
+Department of Engineering Cybernetics
+\end{figure}
+\end{center}
+\end{titlepage}
+
+
+\include{problem3}
+
+\bibliographystyle{IEEEtran}
+\bibliography{bibliography.bib}
+
+\end{document}

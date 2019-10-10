@@ -1,0 +1,78 @@
+\section*{Problem 1 - Attitude Control of Satellite}
+
+\subsection*{Problem 1 a)} 
+
+\textbf{What is the ground speed of the aircraft (numerical value) in the absence of wind?} \\
+In the absence of wind, $V_w = 0$, we have $V_g = V_a = 580 km/h$.
+
+\subsection*{Problem 1 b)}
+
+\textbf{Write down two expressions for the sideslip (crab) angle $\beta$ in the absence of wind. One expression should depend on aircraft velocity and the other on aircraft heading.} \\
+
+\begin{align}
+    \beta &= \sin^{-1}\left( \frac{v_r}{\sqrt{u_r^2 + v_r^2+w_r^2}}\right ) \\
+    \beta &= \chi_c - \psi
+\end{align}
+
+\subsection*{Problem 1 c)}
+
+\textbf{Compute the Dutch-roll natural frequency and relative damping ratio for the aircraft. Can you,
+very briefly with your own words, describe how the Dutch roll mode affect the yaw and roll
+motion? How would the motion change with increased relative damping ratio?}
+
+\begin{align}
+    \lambda_{dutch-roll} = \frac{Y_v+N_r}{2 }\pm \sqrt{\left(\frac{Y_v+N_r}{2}\right)^2 - \left(Y_vN_r - N_vY_r\right)}
+\end{align}
+
+With the constants found from the state space model 
+
+\begin{align}
+    Y_V = -0.322 \\ 
+    N_R = -0.32 \\
+    N_V = 0.0426 \\
+    Y_R = -180.44
+\end{align}
+We get 
+
+\begin{align}
+    \lambda = -0.321 \pm 2.77i \\
+    \omega_n = 2.79 \\
+    \zeta = 0.1147
+\end{align}
+
+Dutch roll will affect roll and yaw by inducing an oscillation in yaw which is "transferred" to roll. If you increase the damping ratio the oscillation will dampen faster. 
+
+
+\subsection*{Problem 1 d)}
+
+\textbf{Compute the spiral-divergence mode. Is the mode unstable?} \\
+For the spiral-divergence mode we assume that $\dot{\bar{p}} = \Bar{p} = 0$ and that the rudder command is negligible. We have
+\begin{align}
+    \lambda_{spiral} &= \frac{N_rL_v - N_vL_r}{L_v} 
+\end{align}
+
+With the constants
+
+\begin{align}
+    L_v = -0.0657 \\
+    L_r = 0.46
+\end{align}
+
+We get \\
+\begin{align}
+    \lambda_{spiral} = -0.022
+\end{align}
+
+Since $\lambda$ is less than 0 we do not have an unstable mode. 
+
+\subsection*{Problem 1 e)}
+\textbf{Compute the roll mode. Is the roll mode faster or slower than the spiral-divergence mode?} \\
+We can find the roll mode by ignoring the heading dynamics and assuming a constant pitch angle. An approximation of the eigenvalue for the rolling mode is given by  
+\begin{align}
+    \lambda_{roll} &= L_p \\
+    &= -2.87
+\end{align}
+This mode is faster, as the pole is more negative.
+
+
+% Note that \mathbf can be used for bold letters in math mode (within equations and dollar signs). \boldsymbol can be used to get bold greek letters.  
